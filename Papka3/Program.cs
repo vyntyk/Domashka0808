@@ -9,7 +9,7 @@
 Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-if (number > 1 && number <= 7)
+if (number > 0 && number <= 7)
 {
     if (number == 6 || number == 7)
     {
