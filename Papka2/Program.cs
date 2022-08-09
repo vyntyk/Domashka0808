@@ -6,23 +6,18 @@
 32679 -> 6
 */
 
-Console.Write("Please enter your number: ");
-int anyNumber = Convert.ToInt32(Console.ReadLine());
-int position = 3;
+Console.WriteLine("Введите число: ");
+int randomNumber = Convert.ToInt32(Console.ReadLine());
 
-if (anyNumber < 100)
+if (randomNumber > 99)
 {
-    Console.WriteLine($"{anyNumber} -> третьей цифры нет");
+    while (randomNumber > 999)
+    {
+        randomNumber = randomNumber / 10;
+    }
+    Console.WriteLine(randomNumber % 10);
 }
 else
 {
-    Console.WriteLine($"{position} цифра: " + FindNumber(anyNumber, position));
-}
-
-int FindNumber(int anyNumber, int position)
-{
-    int digitCount = (int)Math.Log10(anyNumber) + 1;
-
-    var pow = (int)Math.Pow(10, digitCount - position);
-    return (anyNumber / pow) % 10;
+    Console.WriteLine("Третьей цифры нет!");
 }
